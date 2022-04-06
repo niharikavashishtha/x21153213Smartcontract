@@ -26,7 +26,7 @@ privateKey = Buffer.from(process.env.SUPER_SECRET_PRIVATE_KEY, 'hex')
 
 const distribute = async() => {
     // read in the file
-    let distributionAddresses = fs.readFileSync('./accounts.txt', 'utf8').split('\n');
+    let distributionAddresses = fs.readFileSync('./accounts.txt', 'utf8').split(/\r\n/);
 
     // list the addresses
     console.log(`distro addresses are: ${ distributionAddresses}`);
